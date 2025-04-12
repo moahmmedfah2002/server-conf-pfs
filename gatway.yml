@@ -10,7 +10,6 @@ spring:
         routes:
           - id: history
             uri: lb://HISTORY
-            predicate:
+            predicates:
               - Path=/history/**
-            filters:
-              -StripPrefix=1
+            filters: -StripPrefix=1
