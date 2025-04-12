@@ -1,4 +1,5 @@
-server:
+spring:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8888/eureka/
+    registry-fetch-interval-seconds: 3
