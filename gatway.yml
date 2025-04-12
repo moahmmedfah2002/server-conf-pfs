@@ -12,4 +12,5 @@ spring:
             uri: lb://HISTORY
             predicates:
               - Path=/history/**
-            filters: -StripPrefix=1
+            filters:
+              - StripPrefix=1
