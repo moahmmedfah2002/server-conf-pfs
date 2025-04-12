@@ -1,0 +1,16 @@
+server:
+  port: 7001
+eureka:
+  client:
+    register-with-eureka: false
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: history
+            uri: lb://HISTORY
+            predicate:
+              - Path=/history/**
+            filters:
+              -StripPrefix=1
