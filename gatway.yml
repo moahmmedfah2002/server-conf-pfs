@@ -2,7 +2,7 @@ server:
   port: 7001
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
 spring:
   cloud:
     gateway:
