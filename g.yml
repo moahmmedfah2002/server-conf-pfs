@@ -3,46 +3,46 @@ server:
 eureka:
   client:
     register-with-eureka: true
-# spring:
-#   cloud:
-#     gateway:
-#       mvc:
-#         routes:
-#         - id: auth
-#             uri: lb://AUTH
-#             predicates:
-#               - Path=/AUTH/**
-#             filters:
-#               - StripPrefix=1
-#           - id: group
-#             uri: lb://GROUP
-#             predicates:
-#               - Path=/GROUP/**
-#             filters:
-#               - StripPrefix=1
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+        - id: auth
+          uri: lb://AUTH
+          predicates:
+              - Path=/AUTH/**
+          filters:
+              - StripPrefix=1
+        - id: group
+          uri: lb://GROUP
+          predicates:
+              - Path=/GROUP/**
+          filters:
+              - StripPrefix=1
           
-#           - id: history
-#             uri: lb://HISTORY
-#             predicates:
-#               - Path=/history/**
-#             filters:
-#               - StripPrefix=1
-#           - id: receiver
-#             uri: lb://RECIVER
-#             predicates:
-#               - Path=/receiver/**
-#             filters:
-#               - StripPrefix=1
-#           - id: schedule
-#             uri: lb://SCHEDULE
-#             predicates:
-#               - Path=/SCHEDULE/**
-#             filters:
-#               - StripPrefix=1
-#           - id: sendmsg
-#             uri: lb://SENDMSG
-#             predicates:
-#               - Path=/SENDMSG/**
-#             filters:
-#               - StripPrefix=1
+        - id: history
+          uri: lb://HISTORY
+          predicates:
+            - Path=/history/**
+          filters:
+              - StripPrefix=1
+        - id: receiver
+          uri: lb://RECIVER
+          predicates:
+              - Path=/receiver/**
+          filters:
+              - StripPrefix=1
+        - id: schedule
+          uri: lb://SCHEDULE
+          predicates:
+              - Path=/SCHEDULE/**
+          filters:
+              - StripPrefix=1
+        - id: sendmsg
+          uri: lb://SENDMSG
+          predicates:
+              - Path=/SENDMSG/**
+          filters:
+              - StripPrefix=1
 
