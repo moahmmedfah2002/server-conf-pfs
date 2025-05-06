@@ -10,9 +10,9 @@ spring:
         max-in-memory-buffer-size: 10MB  # For larger payloads
       routes:
         - id: auth
-          uri: lb://auth  # Ensure Eureka registration matches
+          uri: lb://AUTH  # Ensure Eureka registration matches
           predicates:
-            - Path=/auth/**
+            - Path=/AUTH/**
           filters:
             - StripPrefix=1
         - id: group
