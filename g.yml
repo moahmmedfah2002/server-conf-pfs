@@ -6,19 +6,10 @@ eureka:
   client:
     register-with-eureka: true
 
-logging:
-  level:
-    org.apache.hc.client5: DEBUG
-    org.apache.hc.core5: DEBUG
+
 spring:
   cloud:
     gateway:
-      httpclient:
-        # Enable response decompression
-        decompress: true
-        # Force accept-encoding header (optional)
-        headers:
-          accept-encoding: gzip, deflate
       mvc:
         routes:
         - id: auth
