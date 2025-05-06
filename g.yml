@@ -11,7 +11,7 @@ spring:
         - id: auth
           uri: lb://AUTH
           predicates:
-              - Path=/AUTH/**
+              - Path=/AUTH/**/*
           filters:
               - StripPrefix=1
         - id: group
