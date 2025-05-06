@@ -6,44 +6,45 @@ eureka:
 spring:
   cloud:
     gateway:
-      mvc:
-      httpclient:
+    httpclient:
         max-in-memory-buffer-size: 10MB # For larger payloads
-      routes:
-        - id: auth
-          uri: lb://auth
-          predicates:
-            - Path=/auth/**
-          filters:
-            - StripPrefix=1
-        - id: group
-          uri: lb://GROUP
-          predicates:
-            - Path=/GROUP/**
-          filters:
-            - StripPrefix=1
+    mvc:
+      
+        routes:
+          - id: auth
+            uri: lb://auth
+            predicates:
+              - Path=/auth/**
+            filters:
+              - StripPrefix=1
+          - id: group
+            uri: lb://GROUP
+            predicates:
+              - Path=/GROUP/**
+            filters:
+              - StripPrefix=1
 
-        - id: history
-          uri: lb://HISTORY
-          predicates:
-            - Path=/history/**
-          filters:
-            - StripPrefix=1
-        - id: receiver
-          uri: lb://RECIVER
-          predicates:
-            - Path=/receiver/**
-          filters:
-            - StripPrefix=1
-        - id: schedule
-          uri: lb://SCHEDULE
-          predicates:
-            - Path=/SCHEDULE/**
-          filters:
-            - StripPrefix=1
-        - id: sendmsg
-          uri: lb://SENDMSG
-          predicates:
-            - Path=/SENDMSG/**
-          filters:
-            - StripPrefix=1
+          - id: history
+            uri: lb://HISTORY
+            predicates:
+              - Path=/history/**
+            filters:
+              - StripPrefix=1
+          - id: receiver
+            uri: lb://RECIVER
+            predicates:
+              - Path=/receiver/**
+            filters:
+              - StripPrefix=1
+          - id: schedule
+            uri: lb://SCHEDULE
+            predicates:
+              - Path=/SCHEDULE/**
+            filters:
+              - StripPrefix=1
+          - id: sendmsg
+            uri: lb://SENDMSG
+            predicates:
+              - Path=/SENDMSG/**
+            filters:
+              - StripPrefix=1
