@@ -6,6 +6,11 @@ eureka:
 spring:
   cloud:
     gateway:
+      httpclient:
+        response-timeout: 30s  # Default is 5s
+        connect-timeout: 5s
+        pool:
+          max-idle-time: 60s
       mvc:
         routes:
         - id: auth
