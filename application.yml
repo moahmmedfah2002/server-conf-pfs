@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password:
-    url: jdbc:mysql://mysql_container:14000/smsGateway
+    url: jdbc:mysql://mysql_container:3306/smsGateway
   jpa:
     hibernate:
       ddl-auto: update
