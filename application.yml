@@ -1,17 +1,16 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8888/eureka/
+      defaultZone: http://discovery:8888/eureka/
     registry-fetch-interval-seconds: 3
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password:
-    url: jdbc:mysql://127.0.0.1:3306/smsGatway
+    url: jdbc:mysql://mysql:3306/smsGatway
   jpa:
     hibernate:
       ddl-auto: update
     database: mysql
     show-sql: true
-        
