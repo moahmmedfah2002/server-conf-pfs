@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://sms-getway-conf-server-1:8888/eureka/
+      defaultZone: http://discovery:8888/eureka/
     registry-fetch-interval-seconds: 3
 spring:
   datasource:
