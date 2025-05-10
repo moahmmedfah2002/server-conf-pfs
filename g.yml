@@ -1,51 +1,49 @@
 server:
   port: 7001
   compression:
-    enabled: false 
+    enabled: false
 eureka:
   client:
     register-with-eureka: true
-
 
 spring:
   cloud:
     gateway:
       mvc:
         routes:
-        - id: group
-          uri: lb://GROUP
-          predicates:
-              - Path=/GROUP/**
-          filters:
-              - StripPrefix=1
-              - AddRequestHeader=Authorization, Bearer ${token}
-          
-        - id: history
-          uri: lb://HISTORY
-          predicates:
-            - Path=/history/**
-          filters:
-              - StripPrefix=1
-              - AddRequestHeader=Authorization, Bearer ${token}
-        - id: receiver
-          uri: lb://RECIVER
-          predicates:
-              - Path=/receiver/**
-          filters:
-              - StripPrefix=1
-              - AddRequestHeader=Authorization, Bearer ${token}
-        - id: schedule
-          uri: lb://SCHEDULE
-          predicates:
-              - Path=/SCHEDULE/**
-          filters:
-              - StripPrefix=1
-              - AddRequestHeader=Authorization, Bearer ${token}
-        - id: sendmsg
-          uri: lb://SENDMSG
-          predicates:
-              - Path=/SENDMSG/**
-          filters:
+          - id: group
+            uri: lb://GROUP
+            predicates:
+              - Path=/groups/**
+            filters:
               - StripPrefix=1
               - AddRequestHeader=Authorization, Bearer ${token}
 
+          - id: history
+            uri: lb://HISTORY
+            predicates:
+              - Path=/histories/**
+            filters:
+              - StripPrefix=1
+              - AddRequestHeader=Authorization, Bearer ${token}
+          - id: receiver
+            uri: lb://RECIVER
+            predicates:
+              - Path=/receivers/**
+            filters:
+              - StripPrefix=1
+              - AddRequestHeader=Authorization, Bearer ${token}
+          - id: schedule
+            uri: lb://SCHEDULE
+            predicates:
+              - Path=/schedule/**
+            filters:
+              - StripPrefix=1
+              - AddRequestHeader=Authorization, Bearer ${token}
+          - id: sendmsg
+            uri: lb://SENDMSG
+            predicates:
+              - Path=/sendmsg/**
+            filters:
+              - StripPrefix=1
+              - AddRequestHeader=Authorization, Bearer ${token}
