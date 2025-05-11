@@ -27,7 +27,7 @@ spring:
               - StripPrefix=1
               - AddRequestHeader=Authorization, Bearer ${token}
           - id: receiver
-            uri: lb://RECIVER
+            uri: lb://receiver
             predicates:
               - Path=/receivers/**
             filters:
