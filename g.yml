@@ -41,7 +41,7 @@ spring:
               - StripPrefix=1
               - AddRequestHeader=Authorization, Bearer ${token}
           - id: sendmsg
-            uri: lb://SENDMSG
+            uri: lb://SendMsg
             predicates:
               - Path=/sendmsg/**
             filters:
